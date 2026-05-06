@@ -1,49 +1,58 @@
-# Signal Density Matters: Multi-Point LLM Integration in Risk-Constrained RL for Stock Trading
+# When LLM Signals Hurt: A Coverage-Density Analysis of LLM-Augmented RL for Stock Trading
 
-## Overview
+This repository hosts the paper *"When LLM Signals Hurt: A Coverage-Density Analysis of LLM-Augmented Reinforcement Learning for Stock Trading,"* which reports negative results on LLM-augmented reinforcement learning for stock trading evaluated on Nasdaq-100 (2019–2023).
 
-This repository contains the code for our paper investigating GRPO-CVaR, 
-a critic-free reinforcement learning algorithm with CVaR tail-risk constraints 
-for Nasdaq-100 stock trading, and the effect of LLM signal density on 
-multi-point signal injection.
+📄 **Paper PDF:** FinAI Paper
 
-## Key Findings
+## Headline findings
 
-- **GRPO-CVaR** combines critic-free group advantage estimation with CVaR 
-  constraints, training on a single GPU in ~55 minutes
-- **CVaR adds 11.47 percentage points** of return over GRPO alone
-- **LLM signals at 9.7% coverage hurt performance** — the signal-free 
-  variant (131.49% return) outperforms the full model (122.26%)
-- Signal density is the critical bottleneck for LLM-augmented trading
+1. **Signal density curve.** LLM signal injection at sparse coverage (≤20%) performs *worse* than no signals at all. The FNSPID dataset's 9.7% non-neutral coverage sits inside this harmful regime.
 
-## Results (2019-2023 Backtest)
+2. **Baseline gap.** The LLM-augmented RL agent (158.11% cumulative return as a 3-seed ensemble) underperforms three standard non-RL baselines: momentum top-10 (250.45%), equal-weight buy-and-hold (235.00%), and equal-weight monthly rebalanced (214.06%).
 
-| Metric | Value |
-|--------|-------|
-| Cumulative Return | 119.56% |
-| Max Drawdown | 31.36% |
-| Rachev Ratio | 0.9288 |
-| Sharpe Ratio | 0.8003 |
+3. **Rebalancing-frequency control.** Deploying the same trained agents under matched monthly execution drops returns by 47pp, ruling out daily-rebalancing transaction costs as the explanation for the baseline gap.
 
-## How to Run
+4. **CVaR null result.** Removing the CVaR tail-risk constraint produces an effect within seed-to-seed noise; the sign of the effect flipped across two independent runs of the same code.
 
-1. Open ` Multi-Point LLM Integration in Risk-Constrained RL for Stock Trading.ipynb` in [Google Colab]([https://colab.research.google.com](https://colab.research.google.com/drive/1vT13_vvidc-wcxUGyLTlcFrvsxvpdnId?usp=sharing))
-2. Run all cells in order (total time: ~3 hours)
-3. Results will be saved in `logs/`
+5. **Per-regime decomposition.** The agent does outperform all non-RL baselines in the 2023 recovery period (52.6% vs. 20–39%), suggesting regime-specific advantages obscured by single-window evaluation.
 
-## Data
+## Methodological recommendations
 
-Training: Nasdaq-100 stocks, Jan 2013 - Dec 2018 (1,509 trading days, 84 stocks)  
-Evaluation: Jan 2019 - Dec 2023 (1,258 trading days)  
-Source: [FNSPID dataset](https://huggingface.co/datasets/benstaf/nasdaq_2013_2023)
+The paper argues that researchers in LLM-augmented RL trading should adopt four practices as standard:
 
-## References
+- Compare against non-RL baselines (momentum top-k, equal-weight monthly rebalanced)
+- Report signal coverage density as a first-class experimental variable
+- Control for rebalancing frequency between agent and baselines
+- Decompose returns by market regime rather than aggregating into a single window
 
-- [FinRL-DeepSeek](https://arxiv.org/abs/2502.07393) (Benhenda 2025)
-- [DAPO for Stock Trading](https://arxiv.org/abs/2505.06408) (Zha et al. 2025)
-- [DeepSeekMath / GRPO](https://arxiv.org/abs/2402.03300) (Shao et al. 2024)
-- [FNSPID Dataset](https://github.com/Zdong104/FNSPID) (Dong et al. 2024)
+## Status
 
-## Author
+- **Submitted to:** NeurIPS 2026
+- **HAL:** *pending validation — link will be added once live*
+- **arXiv:** *pending endorsement — link will be added once live*
 
-Shafiya Kausar — AIvancity School of AI and Data, Paris
+## Code availability
+
+Code and trained models are not currently included in this repository. They will be released after the June 2026 conference presentation. For NeurIPS reviewer access during the review period, an anonymous code repository is referenced in §1 of the paper.
+
+## Citation
+
+If you reference this work, please cite:
+
+```bibtex
+@misc{kausar2026signaldensity,
+  title={When LLM Signals Hurt: A Coverage-Density Analysis of LLM-Augmented Reinforcement Learning for Stock Trading},
+  author={Kausar, Shafiya and [Co-authors]},
+  year={2026},
+  howpublished={Submitted to NeurIPS 2026},
+  url={https://github.com/YOUR_USERNAME/signal-density-llm-trading}
+}
+```
+
+## License
+
+The paper PDF is licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](LICENSE). You may share the paper with attribution, but you may not modify it or use it for commercial purposes without permission.
+
+## Contact
+
+For questions or collaboration: shafiya.kausar@aivancity.education
