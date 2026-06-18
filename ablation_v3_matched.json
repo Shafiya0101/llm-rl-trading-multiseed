@@ -1,0 +1,122 @@
+{
+  "no_cvar": {
+    "mean_return": 151.15985833333335,
+    "std_return": 20.340871918804815,
+    "per_seed": [
+      {
+        "seed": 42,
+        "cum_return_pct": 129.141175,
+        "max_dd_pct": 33.58325181319016,
+        "sharpe": 0.7792381529191859,
+        "rachev": 0.9690050662905668,
+        "final_value": 2291411.75
+      },
+      {
+        "seed": 123,
+        "cum_return_pct": 178.200725,
+        "max_dd_pct": 45.44610324151764,
+        "sharpe": 0.8281500932569307,
+        "rachev": 0.9635947763709289,
+        "final_value": 2782007.25
+      },
+      {
+        "seed": 7,
+        "cum_return_pct": 146.137675,
+        "max_dd_pct": 30.767369898555962,
+        "sharpe": 0.8509286970805737,
+        "rachev": 0.96568262886832,
+        "final_value": 2461376.75
+      }
+    ]
+  },
+  "no_reward_shaping": {
+    "mean_return": 126.85600833333335,
+    "std_return": 4.456371055687831,
+    "per_seed": [
+      {
+        "seed": 42,
+        "cum_return_pct": 125.091075,
+        "max_dd_pct": 35.30536615976452,
+        "sharpe": 0.7601802130196118,
+        "rachev": 0.9688533459291783,
+        "final_value": 2250910.75
+      },
+      {
+        "seed": 123,
+        "cum_return_pct": 122.49895,
+        "max_dd_pct": 30.95525806926946,
+        "sharpe": 0.7663822069973409,
+        "rachev": 0.9519812254744155,
+        "final_value": 2224989.5
+      },
+      {
+        "seed": 7,
+        "cum_return_pct": 132.978,
+        "max_dd_pct": 30.099431349911725,
+        "sharpe": 0.8037305733284742,
+        "rachev": 0.9608664482318253,
+        "final_value": 2329780.0
+      }
+    ]
+  },
+  "no_action_modulation": {
+    "mean_return": 153.87340833333334,
+    "std_return": 8.543390774363079,
+    "per_seed": [
+      {
+        "seed": 42,
+        "cum_return_pct": 144.6154,
+        "max_dd_pct": 32.53413121683227,
+        "sharpe": 0.8282748338622082,
+        "rachev": 0.9665399022469467,
+        "final_value": 2446154.0
+      },
+      {
+        "seed": 123,
+        "cum_return_pct": 165.2256,
+        "max_dd_pct": 46.595513426615796,
+        "sharpe": 0.8028500074360722,
+        "rachev": 0.9571753995780728,
+        "final_value": 2652256.0
+      },
+      {
+        "seed": 7,
+        "cum_return_pct": 151.779225,
+        "max_dd_pct": 41.324367007203236,
+        "sharpe": 0.8106605907952614,
+        "rachev": 0.9297648281221254,
+        "final_value": 2517792.25
+      }
+    ]
+  },
+  "no_signals": {
+    "mean_return": 138.61549166666666,
+    "std_return": 15.736826792224415,
+    "per_seed": [
+      {
+        "seed": 42,
+        "cum_return_pct": 157.95907499999998,
+        "max_dd_pct": 37.07510066255425,
+        "sharpe": 0.8175477147510012,
+        "rachev": 0.96674253018415,
+        "final_value": 2579590.75
+      },
+      {
+        "seed": 123,
+        "cum_return_pct": 119.41264999999999,
+        "max_dd_pct": 32.76305209594214,
+        "sharpe": 0.796695537700305,
+        "rachev": 0.9379122628180679,
+        "final_value": 2194126.5
+      },
+      {
+        "seed": 7,
+        "cum_return_pct": 138.47475,
+        "max_dd_pct": 33.99923002125719,
+        "sharpe": 0.8298084080291475,
+        "rachev": 0.954337000968842,
+        "final_value": 2384747.5
+      }
+    ]
+  }
+}

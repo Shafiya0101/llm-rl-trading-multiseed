@@ -1,0 +1,30 @@
+{
+  "individual_seeds": [
+    {
+      "seed": 42,
+      "cum_return_pct": 92.8204,
+      "max_dd_pct": 33.75162769490301,
+      "sharpe": 0.6951935242307754,
+      "final_value": 1928204.0
+    },
+    {
+      "seed": 123,
+      "cum_return_pct": 118.131225,
+      "max_dd_pct": 38.52579808757728,
+      "sharpe": 0.7214053929968601,
+      "final_value": 2181312.25
+    },
+    {
+      "seed": 7,
+      "cum_return_pct": 122.984025,
+      "max_dd_pct": 33.749173572091365,
+      "sharpe": 0.7763534684483276,
+      "final_value": 2229840.25
+    }
+  ],
+  "individual_mean_return": 111.31188333333334,
+  "individual_std_return": 13.224689885720275,
+  "ensemble_return": 111.011425,
+  "ensemble_sharpe": 0.7526310197456639,
+  "ensemble_max_dd": 36.237702926801646
+}
